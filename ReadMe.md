@@ -1,0 +1,7 @@
+# How to start
+
+1. Change configuration in src/main/resources/application.properties accordingly to your database settings
+2. Compile & Run
+3. Insert SQL into new Joke table:
+   ``INSERT INTO joke (id, joke) VALUES (1, 'Chuck Norris proved that we are alone in the universe. We weren’t before his first space expedition.'), (2, 'Chuck Norris can sneeze with his eyes open.'), (3, 'Chuck Norris is the only man who can fight himself and win.'), (4, 'Chuck Norris invented airplanes because he was tired of being the only person that could fly.'), (5, 'When Chuck Norris was born, the only person who cried was the doctor. Never slap Chuck Norris.'), (6, 'Chuck Norris destroyed the periodic table, because Chuck Norris only recognizes the element of surprise.'), (7, 'Chuck Norris doesn’t breathe, he holds air hostage.'), (8, 'Chuck Norris invented airplanes because he was tired of being the only person that could fly.'), (9, 'Chuck Norris can clap with one hand.'), (10, 'Chuck Norris does not sleep. He waits.'), (11, 'There is no chin behind Chuck Norris’ beard. There is only another fist.'), (12, 'Since 1940, the year Chuck Norris was born, roundhouse kick related deaths have increased 13,000 percent.'), (13, 'Chuck Norris has a mug of nails instead of coffee in the morning.');``
+4. Play around
