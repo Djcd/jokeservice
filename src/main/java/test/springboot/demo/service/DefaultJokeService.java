@@ -63,13 +63,13 @@ public class DefaultJokeService implements JokeService {
         return populateJokeData(jokes.get(rand.nextInt(jokes.size())));
     }
 
-    private JokeData populateJokeData(final Joke Joke){
-        JokeData JokeData = new JokeData(Joke.getId(), Joke.getJoke());
-        return JokeData;
+    private JokeData populateJokeData(final Joke joke){
+        JokeData jokeData = new JokeData(joke.getId(), joke.getJoke());
+        return jokeData;
     }
 
-    private Joke populateJokeEntity(JokeData JokeData){
-        Joke Joke = new Joke(JokeData.getId(), JokeData.getJoke());
-        return Joke;
+    private Joke populateJokeEntity(JokeData jokeData){
+        Joke joke = new Joke(jokeData.getId(), jokeData.getJoke());
+        return joke;
     }
 }

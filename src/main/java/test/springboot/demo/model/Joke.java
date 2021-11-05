@@ -5,26 +5,30 @@ import org.springframework.util.DigestUtils;
 import javax.persistence.*;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
+import java.time.LocalDate;
 import java.util.Locale;
 
 @Entity
+@Table(name = "JOKES")
 public class Joke {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(name="JOKETEXT", nullable=false)
     private String joke;
 
-    @Column(unique=true)
-    private String hash;
+    @Column(name="ADDED")
+    private LocalDate date;
 
     public Joke() {
+        this.date = LocalDate.now();
     }
 
     public Joke(Long id, String joke) {
         this.id = id;
         this.joke = joke;
-        this.hash = DigestUtils.md5DigestAsHex(this.joke.toLowerCase().getBytes(StandardCharsets.UTF_8));
+        this.date = LocalDate.now();
     }
 
     public Long getId() {
@@ -41,10 +45,13 @@ public class Joke {
 
     public void setJoke(String joke) {
         this.joke = joke;
-        this.hash = DigestUtils.md5DigestAsHex(this.joke.toLowerCase().getBytes(StandardCharsets.UTF_8));
     }
 
-    public String getHash() {
-        return hash;
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
     }
 }
